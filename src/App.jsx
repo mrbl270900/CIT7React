@@ -4,7 +4,7 @@ import './App.css';
 import Header from "./components/Header.jsx";
 import Main from "./pages/home";
 import { UsersLayout, UsersList, User, NewUser, loadUsers } from "./pages/users";
-import { MoviesLayout, MoviesList, Moviecontainer, Movie } from "./pages/movies";
+import { MoviesLayout, MoviesList, Movie } from "./pages/movies";
 import Error from "./pages/error";
 // bootstrap imports
 import "bootstrap/dist/css/bootstrap.min.css";
