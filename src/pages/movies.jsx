@@ -113,6 +113,6 @@ function MovieItemGrid() {
             </Container>
         );
     }
-    export { MoviesLayout, MoviesList, Moviecontainer };
 }
+export { MoviesLayout, MoviesList, Moviecontainer };
 
