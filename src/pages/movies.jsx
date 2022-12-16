@@ -4,7 +4,7 @@ import {
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const MoviesLayout = () => {
     return (
@@ -56,8 +56,8 @@ const MoviesList = () => {
 }
 
 
-function MovieItemGrid() {
-    const [movies, setMovies] = useState([]);
+async function MovieItemGrid() {
+    const [Movie, setMovies] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5001/api/movies')
             .then((res) => res.json())
@@ -71,7 +71,7 @@ function MovieItemGrid() {
     </Route>*/ // this code is for a page
     /*------------above code should maybe be placed in app.jsx----------------------------------------------*/
 
-    //}
+    }
 
     function Moviecontainer({ movies }) {
         const movieArr = movies.map((movie) => {
@@ -89,17 +89,17 @@ function MovieItemGrid() {
             <div id="card-image">
                 <img
                     className="movieCard-image"
-                    src={movieposter}
+                    src={movie.omdB_Datasets.poster}
                     alt="Movie poster"
                 />
             </div>
-            <h2 id="tittles">{movie.title}</h2>
+            <h2 id="tittles">{movie.primarytitle}</h2>
         </div>
 
     } // data might be different - movie.title - might be called something else
 
 
-    const Movie = () => {
+const Movie = () => {
         const { tconst } = useParams();
         return (
             <Container fluid>
@@ -112,7 +112,6 @@ function MovieItemGrid() {
                 </Row>
             </Container>
         );
-    }
 }
-export { MoviesLayout, MoviesList, Moviecontainer };
+export { MoviesLayout, MoviesList, Moviecontainer, Movie };
 

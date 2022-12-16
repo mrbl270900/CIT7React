@@ -4,7 +4,7 @@ import './App.css';
 import Header from "./components/Header.jsx";
 import Main from "./pages/home";
 import { UsersLayout, UsersList, User, NewUser, loadUsers } from "./pages/users";
-import { MoviesLayout, MoviesList, Moviecontainer } from "./pages/movies";
+import { MoviesLayout, MoviesList, Moviecontainer, Movie } from "./pages/movies";
 import Error from "./pages/error";
 // bootstrap imports
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -23,7 +23,7 @@ const App = () =>
             </Route>
             <Route path="/movies" element={<MoviesLayout />} >
                 <Route index element={<MoviesList />} />
-                <Route path="/movies/:uid" element={<Moviecontainer />} />
+                <Route path="/movies/:tconst" element={<Movie />} />
             </Route>
             <Route path="*" element={<Error />} />
         </Routes>
