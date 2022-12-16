@@ -48,6 +48,7 @@ const MoviesList = () => {
                     <div>
                         <p>List of all movies</p>
                         <p>See for example <Link to="1">Movie 1</Link>.</p>
+                        { }
                     </div>
                 </Col>
             </Row>
@@ -79,7 +80,7 @@ async function MovieItemGrid() {
         });
         return <div id="image-field"> {movieArr} </div>
 
-    } // remember to export this
+    }
 
     function MovieCard({ movie }) {
         function displayMovie() {
@@ -96,7 +97,7 @@ async function MovieItemGrid() {
             <h2 id="tittles">{movie.primarytitle}</h2>
         </div>
 
-    } // data might be different - movie.title - might be called something else
+    }
 
 
 const Movie = () => {
